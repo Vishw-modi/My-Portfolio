@@ -123,13 +123,18 @@ export default function Portfolio() {
     {
       title: "HealthVitals-AI",
       description:
-        "Full-stack healthcare platform with AI-powered health reports and personalized recommendations.",
+        "Secured a ₹50,000 grant for development and real-world deployment, currently leading mobile app expansion with features such as CalTracK for food health analysis.",
       tech: [
+        "React Native",
+        "Node.js",
+        "fastify.js",
+        "FireBase",
         "React.js",
         "Python",
         "TypeScript",
         "MySQL",
         "TailwindCSS",
+
         "ShadCN",
       ],
       features: [
@@ -138,7 +143,7 @@ export default function Portfolio() {
         "Gemini API integration for personalized reports",
         "90% user satisfaction rate",
       ],
-      github: "https://github.com/smitinit/Healthvitals-ai-gdg",
+      github: "https://github.com/Vishw-modi/SSIP_MOBILE_APP",
       demo: "https://healthvitals-ai-43006.web.app/",
     },
     {
