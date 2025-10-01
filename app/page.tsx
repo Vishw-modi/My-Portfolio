@@ -1042,10 +1042,7 @@ export default function Portfolio() {
         className="py-8 px-6 border-t border-border bg-card/50"
       >
         <div className="container mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2025 Vishw Modi. Crafted with passion using Next.js and Framer
-            Motion
-          </p>
+          <p className="text-muted-foreground">© 2025 Vishw Modi</p>
         </div>
       </motion.footer>
     </div>
