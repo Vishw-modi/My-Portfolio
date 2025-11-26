@@ -144,7 +144,7 @@ export default function Portfolio() {
         "100+ active users with secure, role-based authentication",
         "Daily Task Engine: health, productivity, mood, and custom tasks with real-time sync",
         "Dynamic 15+ question daily health questionnaire",
-        "AI-generated personalized health reports using Gemini API",
+        "AI-generated personalized health reports.",
         "CalTrack: food image upload → nutrition & health analysis",
         "40+ backend APIs fully tested with Postman",
         "90% user satisfaction score",
