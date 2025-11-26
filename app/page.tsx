@@ -144,7 +144,7 @@ export default function Portfolio() {
         "90% user satisfaction rate",
       ],
       github: "https://github.com/Vishw-modi/SSIP_MOBILE_APP",
-      demo: "https://healthvitals-ai-43006.web.app/",
+      demo: "https://health-vitals-ai.vercel.app/",
     },
     {
       title: "PERSONA-AI BOT",
