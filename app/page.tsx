@@ -90,7 +90,7 @@ export default function Portfolio() {
 
   const handleResumeDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1sKoQIRRm3Vt-kpcgEZUUydKxBpY2o-si/view?usp=drive_link",
+      "https://drive.google.com/file/d/1DQUI5MFVREE1gjo-bYGcEEGPJ-B8tsaq/view?usp=drive_link",
       "_blank"
     );
   };
@@ -98,17 +98,20 @@ export default function Portfolio() {
   const skills = {
     languages: ["JavaScript", "TypeScript", "Python", "Java", "C"],
     frameworks: [
-      "React.js",
+      "React Native",
+      "Expo",
       "Next.js",
+      "React.js",
       "Node.js",
+      "Flask",
+      "Python Quarts",
       "Express",
       "TailwindCSS",
       "Tanstack Query",
       "Redux",
     ],
-    databases: [
+    databasesORMS: [
       "MySQL",
-      "PostgreSQL",
       "MongoDB",
       "Neon",
       "SupaBase",
@@ -123,25 +126,28 @@ export default function Portfolio() {
     {
       title: "HealthVitals-AI",
       description:
-        "Secured a ₹50,000 grant for development and real-world deployment, currently leading mobile app expansion with features such as CalTracK for food health analysis.",
+        "AI-powered health analytics platform featuring a React Native mobile app and a Next.js web dashboard. Secured a ₹50,000 government innovation grant and deployed for real-world users. Includes CalTrack—an AI-based food analysis system using image processing and Gemini API—and a smart daily habit tracking engine with personalized recommendations.",
       tech: [
         "React Native",
+        "Expo",
+        "Next.js",
         "Node.js",
-        "fastify.js",
-        "FireBase",
-        "React.js",
-        "Python",
+        "Fastify.js",
+        "Clerk",
+        "Supabase",
+        "Appwrite",
         "TypeScript",
-        "MySQL",
         "TailwindCSS",
-
         "ShadCN",
       ],
       features: [
-        "100+ users with secure login",
-        "Dynamic health questionnaire with 15+ questions",
-        "Gemini API integration for personalized reports",
-        "90% user satisfaction rate",
+        "100+ active users with secure, role-based authentication",
+        "Daily Task Engine: health, productivity, mood, and custom tasks with real-time sync",
+        "Dynamic 15+ question daily health questionnaire",
+        "AI-generated personalized health reports using Gemini API",
+        "CalTrack: food image upload → nutrition & health analysis",
+        "40+ backend APIs fully tested with Postman",
+        "90% user satisfaction score",
       ],
       github: "https://github.com/Vishw-modi/SSIP_MOBILE_APP",
       demo: "https://health-vitals-ai.vercel.app/",
