@@ -637,7 +637,7 @@ export default function Portfolio() {
               {
                 title: "Databases/ORMs",
                 icon: Database,
-                skills: skills.databases,
+                skills: skills.databasesORMS,
                 color: "primary",
               },
               {
