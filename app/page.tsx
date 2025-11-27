@@ -30,6 +30,7 @@ import {
   Sparkles,
   Zap,
   Target,
+  Trophy,
 } from "lucide-react";
 
 export default function Portfolio() {
@@ -97,17 +98,6 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      role: "Front-end Developer",
-      company: "Skyscanner Forage (Virtual Job Simulation)",
-      duration: "Jan 2025 - Feb 2025",
-      points: [
-        "Built a web application using React as a front-end engineer simulation",
-        "Developed travel date picker using Skyscanner's Backpack React library",
-        "Validated UI changes against company test cases for backward compatibility",
-        "Replaced default fetch with TanStack Query, reducing API response time by ~30%",
-      ],
-    },
-    {
       role: "Software Developer",
       company: "Growi Tech",
       duration: "Oct 2025 - Present",
@@ -118,6 +108,17 @@ export default function Portfolio() {
         "Implemented a custom caching layer reducing repeated DB queries and improving API performance by ~40%.",
         "Developed core modules: authentication, bidding, messaging, and lifecycle management.",
         "Delivered all assigned modules and contributed to ongoing system improvements and stability fixes.",
+      ],
+    },
+    {
+      role: "Front-end Developer",
+      company: "Skyscanner Forage (Virtual Job Simulation)",
+      duration: "Jan 2025 - Feb 2025",
+      points: [
+        "Built a web application using React as a front-end engineer simulation",
+        "Developed travel date picker using Skyscanner's Backpack React library",
+        "Validated UI changes against company test cases for backward compatibility",
+        "Replaced default fetch with TanStack Query, reducing API response time by ~30%",
       ],
     },
   ];
@@ -917,16 +918,27 @@ export default function Portfolio() {
             >
               {[
                 {
-                  title: "Event Organization",
+                  title: "Innovation Grant",
                   description:
-                    "Prakash'23 Inter-College Fest - Discipline Committee Team Member",
+                    "Secured a ₹50,000 innovation grant for HealthVitals-AI",
+                  icon: Award,
+                },
+                {
+                  title: "Hackathon Leadership",
+                  description:
+                    "Core Tech Team Head for BuzzTech 50-day hackathon with 150+ participants",
                   icon: Target,
                 },
                 {
-                  title: "Sports Achievements",
+                  title: "Sports Excellence",
+                  description: "Badminton Gujarat Champions Trophy – Winner",
+                  icon: Trophy,
+                },
+                {
+                  title: "Event Organization",
                   description:
-                    "District Doubles Runner-Up (Badminton) • Vadodara Champions Trophy Winner",
-                  icon: Award,
+                    "Prakash'23 Inter-College Fest – Discipline Committee Team Member",
+                  icon: Target,
                 },
               ].map((achievement, index) => (
                 <motion.div
