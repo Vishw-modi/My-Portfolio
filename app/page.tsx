@@ -90,7 +90,7 @@ export default function Portfolio() {
 
   const handleResumeDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1DQUI5MFVREE1gjo-bYGcEEGPJ-B8tsaq/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WuD-WCVhHTjF6lwFczjIh11MosXB1fkY/view?usp=drive_link",
       "_blank"
     );
   };
