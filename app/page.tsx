@@ -95,6 +95,33 @@ export default function Portfolio() {
     );
   };
 
+  const experiences = [
+    {
+      role: "Front-end Developer",
+      company: "Skyscanner Forage (Virtual Job Simulation)",
+      duration: "Jan 2025 - Feb 2025",
+      points: [
+        "Built a web application using React as a front-end engineer simulation",
+        "Developed travel date picker using Skyscanner's Backpack React library",
+        "Validated UI changes against company test cases for backward compatibility",
+        "Replaced default fetch with TanStack Query, reducing API response time by ~30%",
+      ],
+    },
+    {
+      role: "Software Developer",
+      company: "Growi Tech",
+      duration: "Oct 2025 - Present",
+      location: "Gujarat, India",
+      points: [
+        "Engineered a full-stack freelancing marketplace using Next.js, React, Python (Quart), MySQL, and custom UI with secure authentication & RBAC.",
+        "Designed and tested 40+ scalable REST APIs using Postman, maintaining 99% response consistency and clean versioning.",
+        "Implemented a custom caching layer reducing repeated DB queries and improving API performance by ~40%.",
+        "Developed core modules: authentication, bidding, messaging, and lifecycle management.",
+        "Delivered all assigned modules and contributed to ongoing system improvements and stability fixes.",
+      ],
+    },
+  ];
+
   const skills = {
     languages: ["JavaScript", "TypeScript", "Python", "Java", "C"],
     frameworks: [
@@ -141,13 +168,11 @@ export default function Portfolio() {
         "ShadCN",
       ],
       features: [
-        "100+ active users with secure, role-based authentication",
+        "Used by 100+ real users in daily health tracking",
         "Daily Task Engine: health, productivity, mood, and custom tasks with real-time sync",
         "Dynamic 15+ question daily health questionnaire",
-        "AI-generated personalized health reports.",
-        "CalTrack: food image upload → nutrition & health analysis",
-        "40+ backend APIs fully tested with Postman",
-        "90% user satisfaction score",
+        "SymptoScan: AI-generated personalized health reports based on your symptoms.",
+        "CalTrack: Food image upload → nutrition & health analysis",
       ],
       github: "https://github.com/Vishw-modi/SSIP_MOBILE_APP",
       demo: "https://health-vitals-ai.vercel.app/",
@@ -823,54 +848,54 @@ export default function Portfolio() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.01 }}
-            className="mb-12"
-          >
-            <Card className="bg-card border-border shadow-lg">
-              <CardHeader className="pb-4">
-                <div className="flex justify-between items-start flex-wrap gap-4">
-                  <div>
-                    <CardTitle className="text-foreground text-xl">
-                      Front-end Developer
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground text-base">
-                      Skyscanner Forage (Virtual Job Simulation)
-                    </CardDescription>
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.01 }}
+              className="mb-12"
+            >
+              <Card className="bg-card border-border shadow-lg">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-between items-start flex-wrap gap-4">
+                    <div>
+                      <CardTitle className="text-foreground text-xl">
+                        {exp.role}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground text-base">
+                        {exp.company}
+                      </CardDescription>
+                    </div>
+
+                    <Badge className="bg-primary text-primary-foreground">
+                      {exp.duration}
+                    </Badge>
                   </div>
-                  <Badge className="bg-primary text-primary-foreground">
-                    Jan 2025 - Feb 2025
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {[
-                    "Built a web application using React as a front-end engineer simulation",
-                    "Developed travel date picker using Skyscanner's Backpack React library",
-                    "Validated UI changes against company test cases for backward compatibility",
-                    "Replaced default fetch with TanStack Query, reducing API response time by ~30%",
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start gap-3 text-muted-foreground"
-                    >
-                      <span className="text-primary mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </motion.div>
+                </CardHeader>
+
+                <CardContent>
+                  <ul className="space-y-3">
+                    {exp.points.map((item, index) => (
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-start gap-3 text-muted-foreground"
+                      >
+                        <span className="text-primary mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
 
           <div>
             <motion.h3
