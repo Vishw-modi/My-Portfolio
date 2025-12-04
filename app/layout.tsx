@@ -29,8 +29,9 @@ export const metadata: Metadata = {
     "Professional portfolio of Vishw Modi, a passionate Computer Engineering student and Full-Stack Developer specializing in React, Next.js, Node.js backend development, and Data Analytics, leveraging modern web technologies to build innovative solutions.",
   keywords: [
     "Full-Stack Developer",
-    "React",
     "Next.js",
+    "React Native",
+    "React",
     "Node.js",
     "Data Analytics",
     "Portfolio",

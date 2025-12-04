@@ -32,6 +32,7 @@ import {
   Target,
   Trophy,
 } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -740,92 +741,106 @@ export default function Portfolio() {
             className="grid md:grid-cols-2 gap-8"
           >
             {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="group"
-              >
-                <Card className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <motion.div
-                          key={tech}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: techIndex * 0.03 }}
-                          viewport={{ once: true }}
-                        >
-                          <Badge
-                            variant="outline"
-                            className="border-primary/30 text-primary bg-primary/5"
+              <div key={index} className="relative rounded-lg">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={2}
+                />
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="group"
+                >
+                  <Card className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <motion.div
+                            key={tech}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: techIndex * 0.03 }}
+                            viewport={{ once: true }}
                           >
-                            {tech}
-                          </Badge>
-                        </motion.div>
-                      ))}
-                    </div>
+                            <Badge
+                              variant="outline"
+                              className="border-primary/30 text-primary bg-primary/5"
+                            >
+                              {tech}
+                            </Badge>
+                          </motion.div>
+                        ))}
+                      </div>
 
-                    <ul className="text-sm text-muted-foreground space-y-2">
-                      {project.features.map((feature, idx) => (
-                        <motion.li
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-start gap-2"
-                        >
-                          <span className="text-primary mt-1.5 w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-                          {feature}
-                        </motion.li>
-                      ))}
-                    </ul>
+                      <ul className="text-sm text-muted-foreground space-y-2">
+                        {project.features.map((feature, idx) => (
+                          <motion.li
+                            key={idx}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-start gap-2"
+                          >
+                            <span className="text-primary mt-1.5 w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                            {feature}
+                          </motion.li>
+                        ))}
+                      </ul>
 
-                    <div className="flex gap-3 pt-4">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-primary/20 text-foreground hover:bg-primary hover:text-white hover:border-primary bg-transparent"
-                          onClick={() => window.open(project.github, "_blank")}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
-                        </Button>
-                      </motion.div>
-                      {project.demo && (
+                      <div className="flex gap-3 pt-4">
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
                           <Button
+                            variant="outline"
                             size="sm"
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
-                            onClick={() => window.open(project.demo, "_blank")}
+                            className="border-primary/20 text-foreground hover:bg-primary hover:text-white hover:border-primary bg-transparent"
+                            onClick={() =>
+                              window.open(project.github, "_blank")
+                            }
                           >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Demo
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
                           </Button>
                         </motion.div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                        {project.demo && (
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button
+                              size="sm"
+                              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
+                              onClick={() =>
+                                window.open(project.demo, "_blank")
+                              }
+                            >
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Demo
+                            </Button>
+                          </motion.div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>
@@ -859,6 +874,14 @@ export default function Portfolio() {
               whileHover={{ scale: 1.01 }}
               className="mb-12"
             >
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+                borderWidth={2}
+              />
               <Card className="bg-card border-border shadow-lg">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start flex-wrap gap-4">
@@ -899,6 +922,14 @@ export default function Portfolio() {
           ))}
 
           <div>
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
             <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
