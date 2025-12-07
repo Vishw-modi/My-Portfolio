@@ -32,7 +32,6 @@ import {
   Target,
   Trophy,
 } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -155,7 +154,7 @@ export default function Portfolio() {
     {
       title: "HealthVitals-AI",
       description:
-        "AI-powered health analytics platform featuring a React Native mobile app and a Next.js web dashboard. Secured a ₹50,000 government innovation grant and deployed for real-world users. Includes CalTrack—an AI-based food analysis system using image processing and Gemini API—and a smart daily habit tracking engine with personalized recommendations.",
+        "AI-powered health analytics platform featuring a React Native mobile app and a Next.js web dashboard. Secured a ₹50,000 government innovation grant and deployed for real-world users. Includes SypmtoScan detailed analysis of your health based on your symptpoms, Laso-AI and AI chatbot who asks follow-up questions to give a proper response, CalTrack—an AI-based food analysis system using image processing and a smart daily habit tracking engine with personalized recommendations.",
       tech: [
         "React Native",
         "Expo",
@@ -175,6 +174,7 @@ export default function Portfolio() {
         "Dynamic 15+ question daily health questionnaire",
         "SymptoScan: AI-generated personalized health reports based on your symptoms.",
         "CalTrack: Food image upload → nutrition & health analysis",
+        "Laso-AI: AI health assistant for follow-up questions and advice",
       ],
       github: "https://github.com/Vishw-modi/SSIP_MOBILE_APP",
       demo: "https://health-vitals-ai.vercel.app/",
@@ -186,7 +186,7 @@ export default function Portfolio() {
       tech: ["Next.js", "TypeScript", "ShadCN", "TailwindCSS"],
       features: [
         "6+ switchable personas",
-        "Gemini API integration",
+        "Context-aware responses done using prompt engineering techniques",
         "Dynamic tone adaptation",
         "Enhanced user engagement",
       ],
@@ -443,10 +443,10 @@ export default function Portfolio() {
             transition={{ delay: 1.1, duration: 0.8 }}
             className="text-lg mb-12 text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed"
           >
-            Passionate about building innovative solutions with modern
-            technologies. Currently pursuing B.E. in Computer Engineering with a
-            CGPA of 8.74, creating impactful web applications that solve
-            real-world problems.
+            Emerging software engineer blending full-stack development and
+            AI-driven problem-solving. Backed by an 8.74 CGPA and hands-on
+            project experience, I focus on creating efficient, intelligent, and
+            user-centric applications.
           </motion.p>
 
           <motion.div
@@ -517,104 +517,130 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-24 px-6 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
+          {/* Section Heading */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               About <span className="text-primary">Me</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
-              Crafting digital experiences with passion and precision
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Crafting digital experiences with clarity, performance, and
+              engineering precision
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-10"
             >
-              <div className="space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  I'm a passionate Computer Engineering student at Sardar
-                  Vallabhbhai Patel Institute of Technology, with a strong
-                  foundation in full-stack development and emerging
-                  technologies.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  My journey in tech has led me to work on diverse projects
-                  ranging from AI-powered healthcare platforms to machine
-                  learning recommendation systems, always focusing on creating
-                  meaningful user experiences that make a difference.
-                </p>
-              </div>
+              {/* Intro */}
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                I’m a Computer Engineering student with a strong focus on
+                full-stack development, backend engineering, and AI-driven
+                applications. I enjoy building scalable systems using
+                technologies like React Native, Next.js, Node.js, Python, and
+                modern cloud platforms.
+              </p>
 
-              <div className="flex items-center space-x-4 text-muted-foreground bg-card p-4 rounded-lg border border-border">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span className="font-medium">Gujarat, India</span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card p-4 rounded-lg border border-border text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">
-                    100+
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Users Served
-                  </div>
+              {/* Highlight Points (Much cleaner than long paragraphs) */}
+              <div className="space-y-4 max-w-xl">
+                <div className="flex gap-3">
+                  <span className="w-2 h-2 mt-2 rounded-full bg-primary" />
+                  <p className="text-muted-foreground leading-relaxed">
+                    Engineered{" "}
+                    <strong>a production-grade freelancing marketplace</strong>{" "}
+                    at Growi Tech, delivering 40+ scalable APIs, secure
+                    authentication, and a custom caching layer improving backend
+                    performance by ~40%.
+                  </p>
                 </div>
-                <div className="bg-card p-4 rounded-lg border border-border text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">
-                    8.74
-                  </div>
-                  <div className="text-sm text-muted-foreground">CGPA</div>
+
+                <div className="flex gap-3">
+                  <span className="w-2 h-2 mt-2 rounded-full bg-primary" />
+                  <p className="text-muted-foreground leading-relaxed">
+                    Awarded <strong>₹50,000 innovation grant</strong> for
+                    HealthVitals-AI — an AI-powered healthcare platform used by
+                    100+ users with personalized health insights and
+                    downloadable AI-generated reports.
+                  </p>
+                </div>
+
+                <div className="flex gap-3">
+                  <span className="w-2 h-2 mt-2 rounded-full bg-primary" />
+                  <p className="text-muted-foreground leading-relaxed">
+                    Built ML-driven systems like StreamSuggest, processing{" "}
+                    <strong>1M+ TMDB dataset entries </strong>
+                    to deliver high-accuracy content-based recommendations.
+                  </p>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center gap-3 px-5 py-3 rounded-xl bg-card border border-border shadow-sm w-fit">
+                <MapPin className="w-5 h-5 text-primary" />
+                <span className="font-medium text-muted-foreground">
+                  Gujarat, India
+                </span>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-6 max-w-sm">
+                <div className="bg-card border border-border p-5 rounded-xl shadow-md text-center">
+                  <h3 className="text-3xl font-bold text-primary">100+</h3>
+                  <p className="text-sm text-muted-foreground">Users Served</p>
+                </div>
+                <div className="bg-card border border-border p-5 rounded-xl shadow-md text-center">
+                  <h3 className="text-3xl font-bold text-primary">8.74</h3>
+                  <p className="text-sm text-muted-foreground">CGPA</p>
                 </div>
               </div>
             </motion.div>
 
+            {/* Right Card */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
             >
-              <Card className="bg-card border-border shadow-lg">
+              <Card className="bg-card border border-border shadow-xl rounded-2xl p-6">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-foreground flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-xl font-semibold">
                     <Target className="w-5 h-5 text-primary" />
                     Education
                   </CardTitle>
                 </CardHeader>
+
                 <CardContent className="space-y-4">
-                  <div className="space-y-3">
-                    <div>
-                      <h3 className="font-semibold text-foreground text-lg">
-                        Bachelor of Engineering
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Computer Engineering
-                      </p>
-                      <p className="text-muted-foreground">SVPIT, Vasad</p>
-                      <div className="flex items-center justify-between mt-3">
-                        <span className="text-sm flex items-center text-muted-foreground">
-                          <Calendar className="w-4 h-4 mr-2" />
-                          Sep 2022 - Jun 2026
-                        </span>
-                        <Badge className="bg-primary text-primary-foreground">
-                          CGPA: 8.74/10
-                        </Badge>
-                      </div>
-                    </div>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Bachelor of Engineering
+                  </h3>
+
+                  <p className="text-muted-foreground">Computer Engineering</p>
+                  <p className="text-muted-foreground">SVPIT, Vasad</p>
+
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-sm flex items-center text-muted-foreground">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      Sep 2022 – Jun 2026
+                    </span>
+
+                    <Badge className="bg-primary text-primary-foreground text-sm px-3 py-1 rounded-md">
+                      CGPA: 8.74/10
+                    </Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -678,9 +704,8 @@ export default function Portfolio() {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="group rounded-xl"
+                className="group "
               >
-                <GlowingEffect spread={30} variant="white" glow={true} />
                 <Card className="bg-card border-border shadow-lg h-full hover:shadow-xl transition-all duration-300">
                   <CardHeader className="pb-4">
                     <CardTitle className="text-foreground flex items-center gap-2">
@@ -739,94 +764,114 @@ export default function Portfolio() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             {projects.map((project, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="group rounded-xl"
+                transition={{ type: "spring", stiffness: 230, damping: 18 }}
+                className={`
+        group
+        ${index === 0 ? "md:col-span-2 lg:col-span-3" : ""}
+      `}
               >
-                <GlowingEffect spread={30} variant="white" glow={true} />
-                <Card className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
+                <Card className="bg-card border-border shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl h-full">
+                  <div className="p-6 flex flex-col h-full">
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                       {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
+                    </p>
+
+                    {/* Tech Stack */}
+                    <motion.div
+                      className="flex gap-2 flex-wrap mb-6"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: { staggerChildren: 0.03 },
+                        },
+                      }}
+                    >
+                      {project.tech.map((tech, i) => (
                         <motion.div
-                          key={tech}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: techIndex * 0.03 }}
-                          viewport={{ once: true }}
+                          key={i}
+                          variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 },
+                          }}
                         >
                           <Badge
-                            variant="outline"
-                            className="border-primary/30 text-primary bg-primary/5"
+                            variant="secondary"
+                            className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
                           >
                             {tech}
                           </Badge>
                         </motion.div>
                       ))}
-                    </div>
+                    </motion.div>
 
-                    <ul className="text-sm text-muted-foreground space-y-2">
+                    {/* Features */}
+                    <ul className="space-y-3 flex-1">
                       {project.features.map((feature, idx) => (
                         <motion.li
                           key={idx}
-                          initial={{ opacity: 0, x: -20 }}
+                          initial={{ opacity: 0, x: -15 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
+                          transition={{ delay: idx * 0.05 }}
                           viewport={{ once: true }}
-                          className="flex items-start gap-2"
+                          className="flex gap-2"
                         >
-                          <span className="text-primary mt-1.5 w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-                          {feature}
+                          <div className="mt-1 w-2 h-2 rounded-full bg-primary"></div>
+                          <span className="text-sm text-muted-foreground">
+                            {feature}
+                          </span>
                         </motion.li>
                       ))}
                     </ul>
 
-                    <div className="flex gap-3 pt-4">
+                    {/* Buttons */}
+                    <div className="flex gap-3 pt-6">
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.07 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-primary/20 text-foreground hover:bg-primary hover:text-white hover:border-primary bg-transparent"
-                          onClick={() => window.open(project.github, "_blank")}
+                          onClick={() => window.open(project.github)}
+                          className="border-primary/30 text-foreground hover:bg-primary hover:text-white"
                         >
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
+                          <Github className="w-4 h-4 mr-2" /> Code
                         </Button>
                       </motion.div>
+
                       {project.demo && (
                         <motion.div
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.07 }}
                           whileTap={{ scale: 0.95 }}
                         >
                           <Button
                             size="sm"
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
-                            onClick={() => window.open(project.demo, "_blank")}
+                            onClick={() => window.open(project.demo)}
+                            className="bg-primary text-white hover:bg-primary/90"
                           >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Demo
+                            <ExternalLink className="w-4 h-4 mr-2" /> Demo
                           </Button>
                         </motion.div>
                       )}
                     </div>
-                  </CardContent>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -860,16 +905,8 @@ export default function Portfolio() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.01 }}
-              className="mb-12 rounded-xl"
+              className="mb-12"
             >
-              <GlowingEffect
-                spread={40}
-                glow={true}
-                disabled={false}
-                proximity={64}
-                inactiveZone={0.01}
-                borderWidth={2}
-              />
               <Card className="bg-card border-border shadow-lg">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start flex-wrap gap-4">
@@ -910,14 +947,6 @@ export default function Portfolio() {
           ))}
 
           <div>
-            <GlowingEffect
-              spread={40}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-              borderWidth={2}
-            />
             <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
