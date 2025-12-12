@@ -32,6 +32,7 @@ import {
   Target,
   Trophy,
 } from "lucide-react";
+import Snowfall from "react-snowfall";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -280,6 +281,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Snowfall color="#d9d9d9" />
       {/* Navigation */}
       <motion.nav
         initial={{ y: -100 }}
